@@ -7,6 +7,7 @@ public class UIFlightMonitor : MonoBehaviour
 {
 
     public Text Display_Height;
+    public Text Display_MaxHeight;
     public Text Display_SpeedUp;
     public Text Display_Fuel;
     public Text Display_Coins;
@@ -17,6 +18,13 @@ public class UIFlightMonitor : MonoBehaviour
     void Update()
     {
         Display_Height.text = ((int)rocket.transform.position.y).ToString().PadLeft(6, '0') + "m";
+        if (rocket.transform.position.y>PlayerData.maxHeight)
+        {
+            Display_MaxHeight.text = ((int)rocket.transform.position.y).ToString().PadLeft(6, '0') + "m";
+            PlayerData.maxHeight = rocket.transform.position.y;
+        }
+
+        
         Display_SpeedUp.text = ((int)rocket.rigidbody.velocity.y).ToString() + "m/s";
         Display_Fuel.text = (rocket.fuel).ToString("0.00") + "l";
         Display_Coins.text = "Coins: "+ (PlayerData.money.ToString().PadLeft(4, '0'));
