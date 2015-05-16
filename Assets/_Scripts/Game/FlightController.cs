@@ -77,7 +77,6 @@ public class FlightController : MonoBehaviour
         {
             rSpeed.x = maxSpeed;
         }
-        rSpeed.x *= 0.97f;
         rSpeed.z = 0;
         rigidbody.velocity = rSpeed;
 
