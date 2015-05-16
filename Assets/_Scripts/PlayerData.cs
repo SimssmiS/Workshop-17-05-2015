@@ -8,4 +8,5 @@ public class PlayerData : MonoBehaviour {
     public static float accelleration = 11.0f;
     public static float fuel = 8;
     public static int money = 0;
+    public static float maxHeight = 0;
 }
